@@ -7,6 +7,6 @@ Além disso, a calculadora pode ter funcionalidades adicionais, como o botão "C
 
 A calculadora utiliza a linguagem de programação JavaScript para processar as operações matemáticas e exibir os resultados na área de exibição. Por meio de eventos de clique nos botões, funções JavaScript são acionadas para executar as operações correspondentes.
 
-Essa calculadora simples em JavaScript oferece uma maneira conveniente e rápida de realizar cálculos básicos diretamente no navegador, tornando-a uma ferramenta útil para tarefas cotidianas que envolvem cálculos matemáticos simples.
+Essa calculadora simples em JavaScript, HTML e CSS oferece uma maneira conveniente e rápida de realizar cálculos básicos diretamente no navegador, tornando-a uma ferramenta útil para tarefas cotidianas que envolvem cálculos matemáticos simples.
 
 ![image](https://github.com/natanjorge/Calculadora_JavaScript/assets/115876464/7b4f65e7-8bb0-49fd-bd75-bf3df7d2fff3)
