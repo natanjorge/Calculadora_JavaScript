@@ -1,0 +1,55 @@
+<!DOCTYPE html> <!-- É a declaração do tipo de documento e deve estar presente no início de um documento HTML. -->
+<html> <!-- A tag <html> é a tag raiz do documento HTML e contém todo o conteúdo do documento. -->
+<head> <!-- A seção <head> contém informações sobre o documento, como o título da página, neste caso "Calculator". Também há um link para um arquivo CSS externo chamado "style.css" que será usado para estilizar a calculadora. -->
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script> // Dentro da tag <head>, há um bloco <script> que contém código JavaScript. Ele define uma função chamada back() que será usada posteriormente para remover o último caractere do campo de texto da calculadora.
+		function back(){ 
+			var exp = document.calculatrice.textview.value;
+            document.calculatrice.textview.value = exp.substring(0,exp.length-1); 
+		}
+	</script>
+</head>
+<body> <!-- A tag <body> contém o conteúdo visível da página da web. Aqui é onde a calculadora é exibida. -->
+   <div class="calculatrice"> <!-- O conteúdo da calculadora está envolvido em uma <div> com a classe "calculatrice". -->
+   	<!-- Dentro da <div>, há um formulário com o nome "calculatrice" que conterá o campo de texto onde os números e operações da calculadora serão exibidos. O campo de texto é criado com a tag <input> e recebe o nome "textview" e a classe "screen". -->
+	<form name="calculatrice">
+   		<input name="textview" class="screen" type="textview">
+   	</form>
+   	<table>
+   		<tr>
+			<!-- Cada botão é criado com a tag <input> e possui um tipo de botão, uma classe de estilo e um valor. Por exemplo, o botão "C" possui um valor de "C" e quando clicado, define o valor do campo de texto como vazio. -->
+   			<!-- Alguns botões, como "Su" (retrocesso), "√" (raiz quadrada) e "=" (igual), possuem atributos onclick que chamam funções JavaScript definidas anteriormente. Por exemplo, quando o botão "Su" é clicado, a função back() é chamada, removendo o último caractere do campo de texto. -->
+			<td><input type="button" class="bn" value="C" onclick=" document.calculatrice.textview.value = ''"/></td>
+   			<td><input type="button" class="bn" value="Su" onclick="back()"/></td>
+   			<td><input type="button" class="bn" value="√" onclick="document.calculatrice.textview.value = Math.sqrt(document.calculatrice.textview.value)"/></td>
+   			<td><input type="button" class="bn" value="/" onclick="document.calculatrice.textview.value += '/'"/></td>
+   		</tr>
+   		<tr>
+			<!-- Outros botões numéricos e operadores simplesmente adicionam os caracteres correspondentes ao campo de texto quando clicados. -->
+   			<td><input type="button" class="bn" value="7" onclick="document.calculatrice.textview.value += '7'"/></td>
+   			<td><input type="button" class="bn" value="8" onclick="document.calculatrice.textview.value += '8'"/></td>
+   			<td><input type="button" class="bn" value="9" onclick="document.calculatrice.textview.value += '9'"/></td>
+   			<td><input type="button" class="bn" value="x" onclick="document.calculatrice.textview.value += '*'"/></td>
+   		</tr>
+   		<tr>
+   			<td><input type="button" class="bn" value="4" onclick="document.calculatrice.textview.value += '4'"/></td>
+   			<td><input type="button" class="bn" value="5" onclick="document.calculatrice.textview.value += '5'"/></td>
+   			<td><input type="button" class="bn" value="6" onclick="document.calculatrice.textview.value += '6'"/></td>
+   			<td><input type="button" class="bn" value="-" onclick="document.calculatrice.textview.value += '-'"/></td>
+   		</tr>
+   		<tr>
+   			<td><input type="button" class="bn" value="1" onclick="document.calculatrice.textview.value += '1'"/></td>
+   			<td><input type="button" class="bn" value="2" onclick="document.calculatrice.textview.value += '2'"/></td>
+   			<td><input type="button" class="bn" value="3" onclick="document.calculatrice.textview.value += '3'"/></td>
+   			<td rowspan="2"><input style="height: 118px" type="button" class="bn plus" value="+" onclick="document.calculatrice.textview.value += '+'"/></td>
+   		</tr>
+   		<tr>
+   			<td><input type="button" class="bn" value="0" onclick="document.calculatrice.textview.value += '0'"/></td>
+   			<td><input type="button" class="bn" value="." onclick="document.calculatrice.textview.value += '.'"/></td>
+   			<td><input type="button" class="bn" value="=" onclick="document.calculatrice.textview.value = eval(document.calculatrice.textview.value)"/></td>
+   		</tr>
+   	</table>
+   </div>
+</body>
+</html>
